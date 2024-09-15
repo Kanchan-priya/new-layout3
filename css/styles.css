@@ -1,0 +1,752 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+    --dark: #000;
+    --success: #1B6F58;
+    --light-yellow: #F1F0EB;
+    --gray: #687693;
+    --white: #fff;
+}
+
+.btn-success {
+    background-color: var(--success);
+    transition: .5s;
+}
+
+.btn-success:hover {
+    background-color: var(--white);
+    border: 2px solid var(--success);
+    color: var(--success);
+    font-weight: 700;
+    transition: .5s;
+}
+
+body {
+    background-color: var(--light-yellow)
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+p {
+    font-size: 16px;
+    color: var(--gray);
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--success);
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.py-5 {
+    padding: 90px 0 !important;
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.header .navbar-nav .nav-item .nav-link {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.header .navbar-nav .nav-item .nav-link.active {
+    color: var(--success);
+}
+
+.header .navbar-nav .nav-item:last-child .nav-link {
+    background-color: var(--success);
+    border-radius: 50px 10px 50px 10px;
+    color: #fff !important;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.page-header.is-sticky {
+    position: fixed;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+    /* padding: 8px 0; */
+    /* backdrop-filter: blur(10px); */
+    background-color: var(--light-yellow);
+    animation: slideDown 0.35s ease-out;
+    width: 100%;
+    z-index: 12;
+  }
+  
+  .page-header.is-sticky .navbar-brand {
+    max-width: 80%;
+  }
+  
+  /* .page-header.is-sticky button {
+    font-size: 14px;
+    padding: 7px 10px;
+  } */
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+/* carousel start */
+
+.banner_section {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner_section:before,
+.banner_section:after {
+    position: absolute;
+    content: "";
+    height: 200px;
+    width: 200px;
+    background-color: rgb(27 111 88 / 38%);
+    border-radius: 50%;
+}
+
+.banner_section:before {
+    top: -40px;
+    right: -49px;
+}
+
+.banner_section:after {
+    bottom: -40px;
+    right: -49px;
+}
+
+.carousel_div {
+    position: relative;
+}
+
+.plans_div {
+    background-color: rgb(0 0 0 / 75%);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 11;
+    left: 0;
+}
+
+.plans_div .plan1 {
+    border-right: 1px solid #fff;
+    padding: 10px 0;
+    color: #fff;
+}
+
+.plans_div .row .col-md-3:last-child .plan1 {
+    border-right: 0;
+}
+
+.banner_content .banner_heading {
+    position: relative;
+    z-index: 1;
+}
+
+.input_div button {
+    display: block;
+    width: 100%;
+    height: 58px;
+    font-size: 22px;
+}
+
+.banner_content p {
+    font-size: 20px;
+}
+
+.banner_content h3 {
+    font-size: 30px;
+}
+
+.zoom-in-zoom-out {
+    /* margin: 15px; */
+    /* width: 50px;
+    height: 50px; */
+    /* background: green; */
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 22px;
+    animation: zoom-in-zoom-out 2s ease-out infinite;
+    cursor: default !important;
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(.75, .75);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/* carousel end */
+
+/* about start */
+
+.about_group_img {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 15px;
+}
+
+.about_group_img img {
+    height: 100%;
+}
+
+/* about end */
+
+/* project highlight start  */
+
+.project_highlight {
+    background-image: url("../images/bg_img.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.highlight_card {
+    transition: .5s;
+}
+
+.highlight_card:hover span {}
+
+.highlight_card .bounce {
+    display: block;
+    height: 55px;
+    width: 55px;
+    background-color: var(--success);
+    font-size: 28px;
+    text-align: center;
+    line-height: 55px;
+    border-radius: 50%;
+    color: #fff;
+    margin: -50px auto 10px;
+    border: 4px solid var(--light-yellow);
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+
+.highlight_card .bounce1,
+.highlight_card .bounce8 {
+    animation-duration: 2s;
+}
+
+.highlight_card .bounce2,
+.highlight_card .bounce7 {
+    animation-duration: 3s;
+}
+
+.highlight_card .bounce3,
+.highlight_card .bounce6 {
+    animation-duration: 4s;
+}
+
+.highlight_card .bounce4,
+.highlight_card .bounce5 {
+    animation-duration: 5s;
+}
+
+/* .highlight_card:hover .bounce {
+    animation-name: bounce;
+    animation-timing-function: ease;
+} */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* project highlight end  */
+
+/* Project Price List start */
+
+.apartment {
+    position: absolute;
+    top: -13%;
+    width: 100%;
+    left: 0;
+}
+
+.apartment span {
+    height: 60px;
+    width: 100%;
+    background-color: var(--success);
+    display: inline-block;
+    line-height: 65px;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 40px 40px 0 0;
+    text-align: center;
+}
+
+.price_card {
+    background-image: url("../images/bg_img1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 50px 20px 20px;
+}
+
+.price_card span {
+    display: inline-block;
+    padding: 2px 30px;
+    border-radius: 0 50px 50px 0;
+    color: #fff;
+    background-color: var(--success);
+    margin-bottom: 20px;
+}
+
+.price_card h3 {
+    margin-bottom: 20px;
+}
+
+/* Project Price List end */
+
+/* Amenities start */
+
+.amenities_card {
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid var(--success);
+}
+
+.amenities_card:before {
+    position: absolute;
+    content: "";
+    top: 45px;
+    right: -25px;
+    height: 120px;
+    width: 120px;
+    border: 27px solid rgb(27 111 88 / 50%);
+    display: block;
+    border-radius: 50%;
+    transition: all 300ms ease-in-out;
+}
+
+.amenities_card:hover:before {
+    right: -5px;
+    top: -22px;
+    border: 27px solid rgb(27 111 88 / 80%);
+}
+
+.amenities_card a {
+    font-size: 20px;
+    color: var(--success);
+    font-weight: 500;
+}
+
+/* Amenities end */
+
+/* master and floor plans start */
+
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 40px;
+    background: var(--success);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: rise 10s infinite ease-in;
+}
+
+.bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.bubble:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    animation-duration: 11s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(5) {
+    width: 35px;
+    height: 35px;
+    left: 55%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(6) {
+    width: 45px;
+    height: 45px;
+    left: 65%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(7) {
+    width: 90px;
+    height: 90px;
+    left: 70%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(8) {
+    width: 25px;
+    height: 25px;
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(9) {
+    width: 15px;
+    height: 15px;
+    left: 70%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(10) {
+    width: 90px;
+    height: 90px;
+    left: 25%;
+    animation-duration: 10s;
+    animation-delay: 4s;
+}
+
+@keyframes rise {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translate(100px);
+    }
+
+    100% {
+        bottom: 1080px;
+        transform: translateX(-200px);
+    }
+}
+
+
+.plans_content {
+    position: relative;
+    z-index: 10;
+}
+
+.tabs_list .nav-tabs .nav-link {
+    font-size: 18px;
+    font-weight: 700;
+    background-color: rgb(27 111 88 / 70%);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+}
+
+.tabs_list .nav-tabs .nav-link.active {
+    background-color: var(--success);
+    position: relative;
+}
+
+.tabs_list .nav-tabs .nav-link.active:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 15px solid var(--success);
+    border-bottom: 10px solid transparent;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+}
+
+/* master and floor plans end */
+
+/* Location Advantage start */
+
+.location_list li {
+    padding-bottom: 10px;
+}
+
+.location_list li:last-child {
+    padding-bottom: 0;
+}
+
+.location_list li .location_advantage {
+    display: flex;
+}
+
+.location_list li .location_advantage span {
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    background-color: var(--success);
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50% 0 0 50%;
+    flex-shrink: 0;
+}
+
+.location_list li .location_advantage p {
+    margin: 0;
+    height: 45px;
+    width: 100%;
+    line-height: 45px;
+    padding-left: 15px;
+    border: 1px solid var(--success);
+    border-radius: 0 50px 50px 0;
+}
+
+/* Location Advantage end */
+
+
+/* footer start */
+
+.footer {
+    background: var(--success) url("../images/bg_img2.png") no-repeat left center;
+}
+
+.bottom_form {
+    background-color: rgb(0 0 0 / 40%);
+    padding: 45px;
+    border-radius: 20px;
+}
+
+.ftr_form_inputs label {
+    color: var(--white);
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.submit_btn button {
+    background-color: var(--white);
+    font-size: 20px;
+    color: var(--success);
+    font-weight: 500;
+}
+
+.submit_btn button:hover {
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+/* model start */
+
+.model_div .modal .form_heading .heading_div {
+    position: relative;
+    overflow: hidden;
+}
+.model_div .modal .form_heading .heading_div:before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 60%;
+    background-color: rgb(104 118 147 / 28%);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.model_div .modal .modal-header {
+    border: none;
+    padding-bottom: 5px;
+}
+
+.model_div .modal-body .form_heading {}
+
+/* model start */
+
+
+ /* for side open css */
+.navbarBackdrop{
+    position:fixed;
+    content:'';
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0 0 0 / 40%);
+    z-index: 999;
+    animation: fades 300ms;
+}
+
+ /* for side open css */
+
+@media(max-width:1500px){
+    
+}
+
+
+@media(max-width:767px) {
+
+ /* for side open css */
+    .navbar .navbar-collapse{
+        display: block;
+        position: fixed;
+        right: -80%;
+        top: 0;
+        width: 100%;
+        max-width: 80%;
+        height: 100vh;
+        background: #fff;
+        padding: 20px;
+        z-index: 9999;
+        transition: all 400ms ease-in-out;
+    }
+
+    .navbar .navbar-collapse img{
+        width: 20px;
+    }
+
+    .navbar .navbar-collapse.show{
+        right:0;
+    }
+
+ /* for side open css */
+
+
+    .py-5 {
+        padding: 60px 0 !important;
+    }
+
+    .header .navbar-nav .nav-item{
+        text-align: center;
+    }
+
+    .header .navbar-toggler:focus{
+        box-shadow: none;
+    }
+
+    /* bammer start */
+    .banner_section:after,
+    .banner_section:before {
+        content: none;
+    }
+
+    .plans_div {
+        position: static;
+        background-color: var(--dark);
+    }
+
+    .plans_div .plan1 {
+        border-bottom: 1px solid var(--white);
+        border-right: 0;
+    }
+
+    header.header.page-header.scrl{
+        top: 0 !important;
+    }
+
+    /* bammer end */
+
+    .tabs_list .nav-tabs .nav-link.active:after{
+        content: none;
+    }
+}
+
+@media(max-width: 575px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4,
+    h5 {
+        font-size: 18px;
+    }
+
+}
